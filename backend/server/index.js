@@ -24,6 +24,10 @@ mongoose.connect(process.env.ATLAS_URI).then(() => {
     console.log(err);
 })
 
+
 app.get("/",(req,res) => {
-    res.status(201).json({message:"Connected to Backend"})
+    res.status(201).json({
+        name:"sam",
+        userName: "MeMe"
+    });
 });
