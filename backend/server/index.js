@@ -1,9 +1,12 @@
-const express = require("express");
+import express from 'express'
+import mongoose from 'mongoose'
+import cors from 'cors'
+import dotenv from 'dotenv'
 const app = express();
-const cors = require("cors");
-const mongoose = require("mongoose");
 
-require("dotenv").config({path: "../server/config.env"})
+
+
+dotenv.config({path: "../backend/server/config.env"})
 
 
 
@@ -17,6 +20,7 @@ app.use(express.json());
 
 mongoose.connect(process.env.ATLAS_URI).then(() => {
     const port = process.env.PORT;
+    console.log("Database connected succesfully")
     app.listen(port, () => {
         console.log(`App is listening on Port:${port}`);
     })

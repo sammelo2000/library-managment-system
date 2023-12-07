@@ -2,9 +2,10 @@
   "name": "lib-system",
   "version": "1.0.0",
   "description": "server-side",
-  "main": "index.js",
+  "main": "../backend/server/index.js",
+  "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "nodemon index.js"
   },
   "repository": {
     "type": "git",
