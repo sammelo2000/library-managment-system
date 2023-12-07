@@ -3,9 +3,10 @@
   "version": "1.0.0",
   "description": "server-side",
   "main": "../backend/server/index.js",
-  "type": "module",
+  
+  
   "scripts": {
-    "start": "nodemon index.js"
+    "start": "nodemon ../backend/server/index.js"
   },
   "repository": {
     "type": "git",

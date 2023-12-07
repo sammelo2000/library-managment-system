@@ -1,22 +1,12 @@
-import express from 'express'
-import mongoose from 'mongoose'
-import cors from 'cors'
-import dotenv from 'dotenv'
+const mongoose = require("mongoose");
+const express = require("express");
+require("dotenv").config({path: "../backend/server/config.env"});
+const  bookRouter = require("./routes/bookRoute");
 const app = express();
 
 
-
-dotenv.config({path: "../backend/server/config.env"})
-
-
-
-
-const corsOptions = {
-    origin: "http://localhost:3000" 
-}
-
-app.use(cors(corsOptions));
 app.use(express.json());
+app.use("/api/books",bookRouter);
 
 mongoose.connect(process.env.ATLAS_URI).then(() => {
     const port = process.env.PORT;
