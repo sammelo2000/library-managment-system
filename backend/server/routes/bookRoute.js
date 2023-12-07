@@ -13,7 +13,12 @@ bookRouter.post("/",(req,res) => {
     res.send("Input a Book");
 })
 
-
+bookRouter.delete("/:id",(req,res) => {
+    res.send("Delete by id");
+})
+bookRouter.patch("/:id",(req,res) => {
+    res.send("Updated by id");
+})
 
 
 
