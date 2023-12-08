@@ -1,12 +1,14 @@
 
 const bookRouter = require("express").Router();
-const {inputABook,getAllBooks} = require("../controllers/bookController");
+const {
+    inputABook,
+    getAllBooks,
+    getSingleBook
+} = require("../controllers/bookController");
 
 bookRouter.get("/",getAllBooks);
 
-bookRouter.get("/:id",(req,res) => {
-    res.send("Get book By ID");
-})
+bookRouter.get("/:id",getSingleBook);
 
 bookRouter.post("/",inputABook);
 

@@ -30,9 +30,20 @@ const getAllBooks = asyncHandler (async (req,res) => {
     } catch (error) {
         res.send(error);
     }
+});
+
+const getSingleBook = asyncHandler(async (req,res) => {
+    try {
+        const id = req.params.id;
+        const book = await Book.find({'_id':{ $in :id } });
+        res.send(book);
+    } catch (error) {
+        res.send(error);
+    }
 })
 
 module.exports = {
     inputABook,
-    getAllBooks
+    getAllBooks,
+    getSingleBook
 }
